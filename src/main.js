@@ -16,7 +16,7 @@ class Main extends React.Component{
         this.state={
             musiclist: MUSIC_LIST,
             currentMusicItem: MUSIC_LIST[0],
-            repeatType: 'cycle'
+            repeatType: 'cycle',
         };
     };
     playWhenEnd() {
@@ -56,49 +56,46 @@ class Main extends React.Component{
         return this.state.musiclist.indexOf(musicItem);
     };
     componentDidMount() {
-       this.playMusic(this.state.currentMusicItem);
-       $('#player').bind('ended',(e)=>{
-           this.playWhenEnd();
-       });
-       Pubsub.subscribe('DELETE_MUSIC',(msg,musicItem) => {
-           this.setState({
-               musiclist:this.state.musiclist.filter(item => (item!==musicItem))
-           });
-       });
-       Pubsub.subscribe('PLAY_MUSIC',(msg,musicItem) => {
-           this.playMusic(musicItem);
-       });
-       let repeatList = [
-           'cycle',
-           'once',
-           'random',
-       ];
-       Pubsub.subscribe('CHANGE_REPEAT',() => {
-           let index =repeatList.indexOf(this.state.repeatType);
-           index = (index + 1) % repeatList.length;
-           this.setState({
-               repeatType: repeatList[index]
-           });
-       });
-       Pubsub.subscribe('PLAY_NEXT',(msg,musicItem) => {
-           this.playNext();
-       });
-       Pubsub.subscribe('PLAY-PREV',(msg,musicItem) => {
-           this.playNext();
-       });
+        this.playMusic(this.state.currentMusicItem);
+        $('#player').bind('ended',(e)=>{
+            this.playWhenEnd();
+        });
+        Pubsub.subscribe('DELETE_MUSIC',(msg,musicItem) => {
+            this.setState({
+                musiclist:this.state.musiclist.filter(item => (item!==musicItem))
+            });
+        });
+        Pubsub.subscribe('PLAY_MUSIC',(msg,musicItem) => {
+            this.playMusic(musicItem);
+        });
+        Pubsub.subscribe('CHANGE_REPEAT',() => {
+            let repeatList = ['cycle','once','random'];
+            let index =repeatList.indexOf(this.state.repeatType);
+            index = (index + 1) % repeatList.length;
+            this.setState({
+                repeatType: repeatList[index]
+            });
+        });
+        Pubsub.subscribe('PLAY_NEXT',(msg,musicItem) => {
+            this.playNext();
+        });
+        Pubsub.subscribe('PLAY_PREV',(msg,musicItem) => {
+            this.playNext();
+        });
     };
     componentWillMount() {
-      Pubsub.unsubscribe('DELETE_MUSIC');
-      Pubsub.unsubscribe('PLAY_MUSIC');
-      Pubsub.unsubscribe('CHANGE_REPEAT');
-      Pubsub.unsubscribe('PLAY_NEXT');
-      Pubsub.unsubscribe('PLAY_PREV');
-      $('#player').unbind('ended');
+        Pubsub.unsubscribe('DELETE_MUSIC');
+        Pubsub.unsubscribe('PLAY_MUSIC');
+        Pubsub.unsubscribe('CHANGE_REPEAT');
+        Pubsub.unsubscribe('PLAY_NEXT');
+        Pubsub.unsubscribe('PLAY_PREV');
+        $('#player').unbind('ended');
     };
     render() {
         const Home=()=>(
             <Player 
                 currentMusicItem={this.state.currentMusicItem}
+                repeatType={this.state.repeatType}
             >
             </Player>
         );

@@ -100,7 +100,7 @@ class Player extends React.Component{
                                 <i className="icon next m120" onClick={this.playNext.bind(this)}></i>
                             </div>
                             <div className="-col-auto">
-                                <i className={`icon repeat-cycle ${this.props.repeatType}`} onClick={this.changeRepeat}></i>
+                                <i className={`icon repeat-${this.props.repeatType}`} onClick={this.changeRepeat.bind(this)}></i>
                             </div>
                         </div>
                     </div>
