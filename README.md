@@ -1,17 +1,19 @@
 # React Music Player 
+A music player built by React
 
-> A music player built by React
-## 项目预览
-https://github.com/Elena205/ReactMusicPlayer/blob/master/src/images/music-player.png
-https://github.com/Elena205/ReactMusicPlayer/blob/master/src/images/music-list.png
+### overview
+![](https://github.com/Elena205/ReactMusicPlayer/blob/master/src/images/music-player.png?raw=true)
+![](https://github.com/Elena205/ReactMusicPlayer/blob/master/src/images/music-list.png?raw=true)
+
 ## 说明
-技术栈采用react(16.5.0) + react-router-dom(4.3.1) + ES6 + create-react-app
+一个基于react(16.5.0) + react-router-dom(4.3.1) + ES6 + create-react-app技术栈编写的音乐播放器
+
 ### 如何运行
 
 #### 1.将项目克隆到本地，cd到react-music-player
 ``` bash
 git clone https://github.com/Elena205/ReactMusicPlayer.git
-cd react-music-player
+cd ReactMusicPlayer
 ```
 #### 2.安装依赖
 ``` bash
@@ -21,7 +23,7 @@ npm install
 ``` bash
 npm start
 ```
-#### 4.打开浏览器浏览http://localhost:3000/
+#### 4.打开浏览器浏览 http://localhost:3000/
 
 ## create-react-app项目添加less配置
 ###暴露配置文件
@@ -34,7 +36,7 @@ npm run eject
 **安装`less-loader`和`less`**  
 
 ``bash
-yarn add less-loader less --save
+npm i less-loader less --save
 ``  
 
 **修改`webpack`配置**  
