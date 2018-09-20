@@ -1,7 +1,9 @@
 # React Music Player 
 
 > A music player built by React
-
+## 项目预览
+https://github.com/Elena205/ReactMusicPlayer/blob/master/src/images/music-player.png
+https://github.com/Elena205/ReactMusicPlayer/blob/master/src/images/music-list.png
 ## 说明
 技术栈采用react(16.5.0) + react-router-dom(4.3.1) + ES6 + create-react-app
 ### 如何运行
