@@ -2,8 +2,8 @@
 A music player built by React
 
 ### overview
-![](https://github.com/Elena205/ReactMusicPlayer/blob/master/src/images/music-player.png?raw=true)
-![](https://github.com/Elena205/ReactMusicPlayer/blob/master/src/images/music-list.png?raw=true)
+![](https://github.com/Elena205/music-player/blob/master/src/images/music-player.png?raw=true)
+![](https://github.com/Elena205/music-player/blob/master/src/images/music-list.png?raw=true)
 
 ## 说明
 一个基于react(16.5.0) + react-router-dom(4.3.1) + ES6 + create-react-app技术栈编写的音乐播放器
@@ -29,15 +29,15 @@ npm start
 ###暴露配置文件
 `create-react-app`生成的项目，看不到webpack相关的配置文件，需要先暴露出来，使用如下命令即可:  
 
-``bash
+```bash
 npm run eject
-``  
+``` 
 
 **安装`less-loader`和`less`**  
 
-``bash
+```bash
 npm i less-loader less --save
-``  
+``` 
 
 **修改`webpack`配置**  
 
