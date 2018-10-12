@@ -12,7 +12,7 @@ A music player built by React
 
 #### 1.将项目克隆到本地，cd到react-music-player
 ``` bash
-git clone https://github.com/Elena205/ReactMusicPlayer.git
+git clone https://github.com/Elena205/music-player.git
 cd ReactMusicPlayer
 ```
 #### 2.安装依赖
